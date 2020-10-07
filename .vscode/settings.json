@@ -1,3 +1,6 @@
 {
+    "files.associations": {
+        "*.sarif": "json"
+    },
     "python.formatting.provider": "black"
 }

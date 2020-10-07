@@ -1,6 +1,6 @@
 # advance-security-kenna
 
-GitHub Advance Security Action to push SARIF files into Kenna
+GitHub Advance Security Action to push SARIF results into Kenna
 
 ## Setting up an Action
 
@@ -16,9 +16,12 @@ jobs:
     # ...
     - name: Upload to Kenna
       uses: GeekMasher/advance-security-kenna@main
+      # [optional] Only push Vulnerabilities if in production
+      # if: ${{ github.ref == 'refs/heads/master' }}
+      # Action Properties/Settings
       with:
         endpoint: ${{ secrets.KENNA_URL }}
-        token: ${{ secrets.KENNA_TOKEN }}
+        kenna_token: ${{ secrets.KENNA_TOKEN }}
         connector: 1
 ```
 
@@ -26,3 +29,25 @@ In this case, two secrets can be added (possibly globally) called:
 
 - `KENNA_URL` - Can be sensitive
 - `KENNA_TOKEN` - Very sensitive
+
+
+## Running Locally
+
+### Command Line
+
+```bash
+python -m ghas_kenna \
+  -e "https://api.kennasecurity.com" \
+  -k "$KENNA_TOKEN" \
+  -c 1234 \
+  -i "./results"
+```
+
+### Docker
+
+```bash
+# Build 
+docker build -t ghas_kenna .
+# Run container
+docker run ghas_kenna --help
+```

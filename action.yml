@@ -1,17 +1,19 @@
 # action.yml
 name: 'Advance Security Kenna Action'
-description: 'GitHub Advance Security Action to push SARIF files into Kenna'
+description: 'GitHub Advance Security Action to push SARIF results into Kenna'
 author: GeekMasher
 
 inputs:
   endpoint:
     description: 'Kenna Endpoint'   
     required: true
-  token:
+  kenna_token:
     description: 'Kenna Access Token'
     required: true
+  github_token:
+    description: 'GitHub Access Token'
   connector:
-    description: 'Kenna API Connector'
+    description: 'Kenna Connector ID'
     required: true
 
 runs:
@@ -19,5 +21,7 @@ runs:
   image: 'Dockerfile'
   args:
     - -e ${{ inputs.endpoint }}
-    - -t ${{ inputs.token }}
+    - -k ${{ inputs.kenna_token }}
+    - -t ${{ inputs.github_token }}
     - -c ${{ inputs.connector }}
+    - -i ${{ inputs.input }}

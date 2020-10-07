@@ -1,0 +1,1538 @@
+{
+  "$schema" : "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.2.6",
+        "rules" : [ {
+          "id" : "java/sql-injection",
+          "name" : "java/sql-injection",
+          "shortDescription" : {
+            "text" : "Query built from user-controlled sources"
+          },
+          "fullDescription" : {
+            "text" : "Building a SQL or Java Persistence query from user-controlled sources is vulnerable to insertion of malicious code by the user."
+          },
+          "defaultConfiguration" : {
+            "level" : "error"
+          },
+          "properties" : {
+            "tags" : [ "security", "external/cwe/cwe-089" ],
+            "kind" : "path-problem",
+            "precision" : "high",
+            "name" : "Query built from user-controlled sources",
+            "description" : "Building a SQL or Java Persistence query from user-controlled sources is vulnerable to insertion of\n              malicious code by the user.",
+            "id" : "java/sql-injection",
+            "problem.severity" : "error"
+          }
+        } ]
+      }
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/advanced/SqlInjectionLesson6a.java",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson10.java",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson2.java",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    }, {
+      "location" : {
+        "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson3.java",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 3
+      }
+    }, {
+      "location" : {
+        "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson4.java",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 4
+      }
+    }, {
+      "location" : {
+        "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 5
+      }
+    }, {
+      "location" : {
+        "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5b.java",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 6
+      }
+    }, {
+      "location" : {
+        "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson8.java",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 7
+      }
+    }, {
+      "location" : {
+        "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson9.java",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 8
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "java/sql-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "Query might include code from [this user input](1)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/advanced/SqlInjectionLesson6a.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 67,
+            "startColumn" : 60,
+            "endColumn" : 65
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2b95e3c48ba92cd0:1",
+        "primaryLocationStartColumnFingerprint" : "43"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/advanced/SqlInjectionLesson6a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 51,
+                  "startColumn" : 35,
+                  "endColumn" : 65
+                }
+              },
+              "message" : {
+                "text" : "userid_6a : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/advanced/SqlInjectionLesson6a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 52,
+                  "startColumn" : 32,
+                  "endColumn" : 41
+                }
+              },
+              "message" : {
+                "text" : "userid_6a : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/advanced/SqlInjectionLesson6a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 56,
+                  "startColumn" : 44,
+                  "endColumn" : 62
+                }
+              },
+              "message" : {
+                "text" : "accountName : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/advanced/SqlInjectionLesson6a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 67,
+                  "startColumn" : 60,
+                  "endColumn" : 65
+                }
+              },
+              "message" : {
+                "text" : "query"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/advanced/SqlInjectionLesson6a.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 51,
+            "startColumn" : 35,
+            "endColumn" : 65
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      } ]
+    }, {
+      "ruleId" : "java/sql-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "Query might include code from [this user input](1)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson10.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 63,
+            "startColumn" : 60,
+            "endColumn" : 65
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "983b99783dada75a:1",
+        "primaryLocationStartColumnFingerprint" : "43"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson10.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 52,
+                  "startColumn" : 35,
+                  "endColumn" : 69
+                }
+              },
+              "message" : {
+                "text" : "action_string : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson10.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 53,
+                  "startColumn" : 44,
+                  "endColumn" : 57
+                }
+              },
+              "message" : {
+                "text" : "action_string : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson10.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 56,
+                  "startColumn" : 56,
+                  "endColumn" : 69
+                }
+              },
+              "message" : {
+                "text" : "action : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson10.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 63,
+                  "startColumn" : 60,
+                  "endColumn" : 65
+                }
+              },
+              "message" : {
+                "text" : "query"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson10.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 52,
+            "startColumn" : 35,
+            "endColumn" : 69
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      } ]
+    }, {
+      "ruleId" : "java/sql-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "Query might include code from [this user input](1)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson2.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 62,
+            "startColumn" : 56,
+            "endColumn" : 61
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "1c69de562b7d4118:1",
+        "primaryLocationStartColumnFingerprint" : "43"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson2.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 55,
+                  "startColumn" : 35,
+                  "endColumn" : 61
+                }
+              },
+              "message" : {
+                "text" : "query : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson2.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 56,
+                  "startColumn" : 32,
+                  "endColumn" : 37
+                }
+              },
+              "message" : {
+                "text" : "query : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson2.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 59,
+                  "startColumn" : 44,
+                  "endColumn" : 56
+                }
+              },
+              "message" : {
+                "text" : "query : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson2.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 62,
+                  "startColumn" : 56,
+                  "endColumn" : 61
+                }
+              },
+              "message" : {
+                "text" : "query"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson2.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 55,
+            "startColumn" : 35,
+            "endColumn" : 61
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      } ]
+    }, {
+      "ruleId" : "java/sql-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "Query might include code from [this user input](1)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson3.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 65,
+            "startColumn" : 41,
+            "endColumn" : 46
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "6831612ccb8d413b:1",
+        "primaryLocationStartColumnFingerprint" : "24"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson3.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 3
+                },
+                "region" : {
+                  "startLine" : 56,
+                  "startColumn" : 35,
+                  "endColumn" : 61
+                }
+              },
+              "message" : {
+                "text" : "query : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson3.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 3
+                },
+                "region" : {
+                  "startLine" : 57,
+                  "startColumn" : 32,
+                  "endColumn" : 37
+                }
+              },
+              "message" : {
+                "text" : "query : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson3.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 3
+                },
+                "region" : {
+                  "startLine" : 60,
+                  "startColumn" : 44,
+                  "endColumn" : 56
+                }
+              },
+              "message" : {
+                "text" : "query : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson3.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 3
+                },
+                "region" : {
+                  "startLine" : 65,
+                  "startColumn" : 41,
+                  "endColumn" : 46
+                }
+              },
+              "message" : {
+                "text" : "query"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson3.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 3
+          },
+          "region" : {
+            "startLine" : 56,
+            "startColumn" : 35,
+            "endColumn" : 61
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      } ]
+    }, {
+      "ruleId" : "java/sql-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "Query might include code from [this user input](1)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson4.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 59,
+            "startColumn" : 41,
+            "endColumn" : 46
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "70e3ff06f7af756a:1",
+        "primaryLocationStartColumnFingerprint" : "24"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson4.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 4
+                },
+                "region" : {
+                  "startLine" : 52,
+                  "startColumn" : 35,
+                  "endColumn" : 61
+                }
+              },
+              "message" : {
+                "text" : "query : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson4.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 4
+                },
+                "region" : {
+                  "startLine" : 53,
+                  "startColumn" : 32,
+                  "endColumn" : 37
+                }
+              },
+              "message" : {
+                "text" : "query : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson4.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 4
+                },
+                "region" : {
+                  "startLine" : 56,
+                  "startColumn" : 44,
+                  "endColumn" : 56
+                }
+              },
+              "message" : {
+                "text" : "query : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson4.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 4
+                },
+                "region" : {
+                  "startLine" : 59,
+                  "startColumn" : 41,
+                  "endColumn" : 46
+                }
+              },
+              "message" : {
+                "text" : "query"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson4.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 4
+          },
+          "region" : {
+            "startLine" : 52,
+            "startColumn" : 35,
+            "endColumn" : 61
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      } ]
+    }, {
+      "ruleId" : "java/sql-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "Query might include code from [this user input](1).\nQuery might include code from [this user input](2).\nQuery might include code from [this user input](3)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 62,
+            "startColumn" : 60,
+            "endColumn" : 65
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "2b95e3c48ba92cd0:1",
+        "primaryLocationStartColumnFingerprint" : "43"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 5
+                },
+                "region" : {
+                  "startLine" : 53,
+                  "startColumn" : 35,
+                  "endColumn" : 63
+                }
+              },
+              "message" : {
+                "text" : "account : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 5
+                },
+                "region" : {
+                  "startLine" : 54,
+                  "startColumn" : 32,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "... + ... : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 5
+                },
+                "region" : {
+                  "startLine" : 57,
+                  "startColumn" : 44,
+                  "endColumn" : 62
+                }
+              },
+              "message" : {
+                "text" : "accountName : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 5
+                },
+                "region" : {
+                  "startLine" : 62,
+                  "startColumn" : 60,
+                  "endColumn" : 65
+                }
+              },
+              "message" : {
+                "text" : "query"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 5
+                },
+                "region" : {
+                  "startLine" : 53,
+                  "startColumn" : 65,
+                  "endColumn" : 94
+                }
+              },
+              "message" : {
+                "text" : "operator : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 5
+                },
+                "region" : {
+                  "startLine" : 54,
+                  "startColumn" : 32,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "... + ... : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 5
+                },
+                "region" : {
+                  "startLine" : 57,
+                  "startColumn" : 44,
+                  "endColumn" : 62
+                }
+              },
+              "message" : {
+                "text" : "accountName : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 5
+                },
+                "region" : {
+                  "startLine" : 62,
+                  "startColumn" : 60,
+                  "endColumn" : 65
+                }
+              },
+              "message" : {
+                "text" : "query"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 5
+                },
+                "region" : {
+                  "startLine" : 53,
+                  "startColumn" : 96,
+                  "endColumn" : 126
+                }
+              },
+              "message" : {
+                "text" : "injection : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 5
+                },
+                "region" : {
+                  "startLine" : 54,
+                  "startColumn" : 32,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "... + ... : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 5
+                },
+                "region" : {
+                  "startLine" : 57,
+                  "startColumn" : 44,
+                  "endColumn" : 62
+                }
+              },
+              "message" : {
+                "text" : "accountName : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 5
+                },
+                "region" : {
+                  "startLine" : 62,
+                  "startColumn" : 60,
+                  "endColumn" : 65
+                }
+              },
+              "message" : {
+                "text" : "query"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 35,
+            "endColumn" : 63
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      }, {
+        "id" : 2,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 65,
+            "endColumn" : 94
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      }, {
+        "id" : 3,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5a.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 5
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 96,
+            "endColumn" : 126
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      } ]
+    }, {
+      "ruleId" : "java/sql-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "Query might include code from [this user input](1)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5b.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 58,
+            "startColumn" : 67,
+            "endColumn" : 78
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c54383daa06514cd:1",
+        "primaryLocationStartColumnFingerprint" : "54"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5b.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 6
+                },
+                "region" : {
+                  "startLine" : 51,
+                  "startColumn" : 35,
+                  "endColumn" : 62
+                }
+              },
+              "message" : {
+                "text" : "userid : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5b.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 6
+                },
+                "region" : {
+                  "startLine" : 52,
+                  "startColumn" : 45,
+                  "endColumn" : 51
+                }
+              },
+              "message" : {
+                "text" : "userid : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5b.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 6
+                },
+                "region" : {
+                  "startLine" : 55,
+                  "startColumn" : 64,
+                  "endColumn" : 82
+                }
+              },
+              "message" : {
+                "text" : "accountName : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5b.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 6
+                },
+                "region" : {
+                  "startLine" : 58,
+                  "startColumn" : 67,
+                  "endColumn" : 78
+                }
+              },
+              "message" : {
+                "text" : "queryString"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson5b.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 6
+          },
+          "region" : {
+            "startLine" : 51,
+            "startColumn" : 35,
+            "endColumn" : 62
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      } ]
+    }, {
+      "ruleId" : "java/sql-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "Query might include code from [this user input](1).\nQuery might include code from [this user input](2)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson8.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 65,
+            "startColumn" : 60,
+            "endColumn" : 65
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "615295edb2bddc7:1",
+        "primaryLocationStartColumnFingerprint" : "43"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson8.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 7
+                },
+                "region" : {
+                  "startLine" : 53,
+                  "startColumn" : 35,
+                  "endColumn" : 60
+                }
+              },
+              "message" : {
+                "text" : "name : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson8.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 7
+                },
+                "region" : {
+                  "startLine" : 54,
+                  "startColumn" : 47,
+                  "endColumn" : 51
+                }
+              },
+              "message" : {
+                "text" : "name : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson8.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 7
+                },
+                "region" : {
+                  "startLine" : 57,
+                  "startColumn" : 59,
+                  "endColumn" : 70
+                }
+              },
+              "message" : {
+                "text" : "name : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson8.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 7
+                },
+                "region" : {
+                  "startLine" : 65,
+                  "startColumn" : 60,
+                  "endColumn" : 65
+                }
+              },
+              "message" : {
+                "text" : "query"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson8.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 7
+                },
+                "region" : {
+                  "startLine" : 53,
+                  "startColumn" : 62,
+                  "endColumn" : 91
+                }
+              },
+              "message" : {
+                "text" : "auth_tan : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson8.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 7
+                },
+                "region" : {
+                  "startLine" : 54,
+                  "startColumn" : 53,
+                  "endColumn" : 61
+                }
+              },
+              "message" : {
+                "text" : "auth_tan : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson8.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 7
+                },
+                "region" : {
+                  "startLine" : 57,
+                  "startColumn" : 72,
+                  "endColumn" : 87
+                }
+              },
+              "message" : {
+                "text" : "auth_tan : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson8.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 7
+                },
+                "region" : {
+                  "startLine" : 65,
+                  "startColumn" : 60,
+                  "endColumn" : 65
+                }
+              },
+              "message" : {
+                "text" : "query"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson8.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 35,
+            "endColumn" : 60
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      }, {
+        "id" : 2,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson8.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 7
+          },
+          "region" : {
+            "startLine" : 53,
+            "startColumn" : 62,
+            "endColumn" : 91
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      } ]
+    }, {
+      "ruleId" : "java/sql-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "Query might include code from [this user input](1).\nQuery might include code from [this user input](2)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson9.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 66,
+            "startColumn" : 60,
+            "endColumn" : 65
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "c3579bd895056390:1",
+        "primaryLocationStartColumnFingerprint" : "43"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson9.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 8
+                },
+                "region" : {
+                  "startLine" : 55,
+                  "startColumn" : 35,
+                  "endColumn" : 60
+                }
+              },
+              "message" : {
+                "text" : "name : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson9.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 8
+                },
+                "region" : {
+                  "startLine" : 56,
+                  "startColumn" : 41,
+                  "endColumn" : 45
+                }
+              },
+              "message" : {
+                "text" : "name : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson9.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 8
+                },
+                "region" : {
+                  "startLine" : 59,
+                  "startColumn" : 53,
+                  "endColumn" : 64
+                }
+              },
+              "message" : {
+                "text" : "name : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson9.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 8
+                },
+                "region" : {
+                  "startLine" : 66,
+                  "startColumn" : 60,
+                  "endColumn" : 65
+                }
+              },
+              "message" : {
+                "text" : "query"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson9.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 8
+                },
+                "region" : {
+                  "startLine" : 55,
+                  "startColumn" : 62,
+                  "endColumn" : 91
+                }
+              },
+              "message" : {
+                "text" : "auth_tan : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson9.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 8
+                },
+                "region" : {
+                  "startLine" : 56,
+                  "startColumn" : 47,
+                  "endColumn" : 55
+                }
+              },
+              "message" : {
+                "text" : "auth_tan : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson9.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 8
+                },
+                "region" : {
+                  "startLine" : 59,
+                  "startColumn" : 66,
+                  "endColumn" : 81
+                }
+              },
+              "message" : {
+                "text" : "auth_tan : String"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson9.java",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 8
+                },
+                "region" : {
+                  "startLine" : 66,
+                  "startColumn" : 60,
+                  "endColumn" : 65
+                }
+              },
+              "message" : {
+                "text" : "query"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson9.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 55,
+            "startColumn" : 35,
+            "endColumn" : 60
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      }, {
+        "id" : 2,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "webgoat-lessons/sql-injection/src/main/java/org/owasp/webgoat/sql_injection/introduction/SqlInjectionLesson9.java",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 8
+          },
+          "region" : {
+            "startLine" : 55,
+            "startColumn" : 62,
+            "endColumn" : 91
+          }
+        },
+        "message" : {
+          "text" : "this user input"
+        }
+      } ]
+    } ],
+    "columnKind" : "utf16CodeUnits",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarif-latest"
+    }
+  } ]
+}
