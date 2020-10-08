@@ -22,11 +22,6 @@ parser.add_argument(
     help="Kenna Token"
 )
 parser.add_argument(
-    '-t', '--github-token',
-    default=str(os.environ.get('GITHUB_TOKEN')),
-    help="GitHub Token"
-)
-parser.add_argument(
     '-e', '--endpoint',
     required=True,
     default=os.environ.get('ENDPOINT')
