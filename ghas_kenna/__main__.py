@@ -47,7 +47,7 @@ parser.add_argument(
 )
 parser.add_argument(
     '--vulnerability-format',
-    default="[CWE-{cwe}] {path}",
+    default="[{name}] {path}",
     help="Vulnerability Unique Identifier String",
 )
 
