@@ -29,8 +29,8 @@ parser.add_argument(
 parser.add_argument(
     '-a', '--application',
     default='/'.join([
-        os.environ.get('GITHUB_SERVER_URL'),
-        os.environ.get('GITHUB_REPOSITORY')
+        os.environ.get('GITHUB_SERVER_URL', ''),
+        os.environ.get('GITHUB_REPOSITORY', '')
     ]),
     help="Kenna Application ID/Name"
 )
