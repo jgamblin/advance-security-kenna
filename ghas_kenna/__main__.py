@@ -23,7 +23,7 @@ parser.add_argument(
 )
 parser.add_argument(
     '-t', '--github-token',
-    default=os.environ.get('GITHUB_TOKEN'),
+    default=str(os.environ.get('GITHUB_TOKEN')),
     help="GitHub Token"
 )
 parser.add_argument(
