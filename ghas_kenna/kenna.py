@@ -71,12 +71,10 @@ class Kenna():
                 }
             })
 
-            cwes = ["{:03}".format(cwe) for cwe in vulnerability.cwes]
-
             vuln_defs.append({
                 "scanner_identifier": vulnerability.identifier,
                 "scanner_type": "codescanning",
-                "cwe_identifiers": cwes,
+                "cwe_identifiers": vulnerability.cwes,
                 "name": vulnerability.name,
                 "description": vulnerability.description
             })
