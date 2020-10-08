@@ -48,6 +48,10 @@ class Kenna():
                 'file': handle
             })
         if res.status_code != 200:
+            logging.error("Request Status Code :: " + str(res.status_code))
+            # Show content if logging is set to debug
+            if logging.getLogger().isEnabledFor(logging.DEBUG):
+                logging.error(str(res.text))
             raise Exception("File Upload Request Failed")
 
         return res.json()
