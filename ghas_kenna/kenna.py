@@ -74,7 +74,7 @@ class Kenna():
             vuln_defs.append({
                 "scanner_identifier": vulnerability.identifier,
                 "scanner_type": "codescanning",
-                "cwe_identifiers": vulnerability.cwes,
+                "cwe_identifiers": ','.join(vulnerability.cwes),
                 "name": vulnerability.name,
                 "description": vulnerability.description
             })
