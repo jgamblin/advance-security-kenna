@@ -57,7 +57,9 @@ class Kenna():
         return res.json()
 
     def generateData(self, vulnerabilities):
-        now = datetime.datetime.now()
+        now = datetime.datetime.strftime(
+            datetime.datetime.now(), "%Y-%m-%d-%X"
+        )
 
         findings = []
         vuln_defs = []
@@ -67,7 +69,9 @@ class Kenna():
                 "scanner_type": "codescanning",
                 "scanner_identifier": vulnerability.identifier,
                 "scanner_score": int(vulnerability.criticality[1]),
-                # "created_at": str(now),
+                "created_at": now,
+                # TODO: get value from GitHub API
+                "last_seen_at": now,
                 "triage_status": "open",
                 "additional_fields": {
                     "line_number": vulnerability.line_number,
@@ -89,9 +93,10 @@ class Kenna():
                 "url": self.application,
                 "tags": [
                     "AppID:CodeQL"
-                ]
+                ],
+                "vulns": [],
+                "findings": findings
             }],
-            "findings": findings,
             "vuln_defs": vuln_defs
         }
 
