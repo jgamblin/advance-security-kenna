@@ -9,6 +9,14 @@ from ghas_kenna.vulnerability import Vulnerability
 from ghas_kenna.kenna import Kenna
 
 
+if os.environ.get('GITHUB_SERVER_URL'):
+    default_application = "{}/{}".format(
+        os.environ.get('GITHUB_SERVER_URL'),
+        os.environ.get('GITHUB_REPOSITORY')
+    )
+else:
+    default_application = ""
+
 parser = argparse.ArgumentParser("advance-security-kenna")
 parser.add_argument(
     '--debug',
@@ -17,21 +25,16 @@ parser.add_argument(
 )
 parser.add_argument(
     '-k', '--kenna-token',
-    required=True,
-    default=os.environ.get('TOKEN'),
+    default=os.environ.get('KENNA_TOKEN'),
     help="Kenna Token"
 )
 parser.add_argument(
     '-e', '--endpoint',
-    required=True,
-    default=os.environ.get('ENDPOINT')
+    default=os.environ.get('KENNA_ENDPOINT')
 )
 parser.add_argument(
     '-a', '--application',
-    default='/'.join([
-        os.environ.get('GITHUB_SERVER_URL', ''),
-        os.environ.get('GITHUB_REPOSITORY', '')
-    ]),
+    default=default_application,
     help="Kenna Application ID/Name"
 )
 parser.add_argument(
@@ -69,9 +72,11 @@ kenna_client = Kenna(
     application=arguments.application
 )
 # TODO: Check if we can authenticate to instance
-# if not kenna_client.checkLogin():
-#     logging.error("Failed to authentication")
-#     raise Exception("Failed to authentication")
+if not kenna_client.checkLogin():
+    logging.error("Failed to authentication")
+    raise Exception(
+        "Failed to authentication, please check access token and endpoint"
+    )
 
 # List of SARIF files found
 if os.path.isfile(arguments.input):

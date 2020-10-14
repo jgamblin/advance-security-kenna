@@ -18,21 +18,20 @@ class Kenna():
         self.session = requests.Session()
         self.session.headers.update({
             'X-Risk-Token': self.token
+            # 'Content-Type': 'application/json'
         })
+
+        logging.info("Kenna Endpoint :: " + endpoint)
+        logging.debug("Kenna Token :: " + token)
 
     def getEndpoint(self, path: str = ''):
         return self.endpoint + path
 
-    def _buildRequest(self, path: str, params: dict = {}) -> dict:
-        res = self.session.get(self.getEndpoint(path), params=params)
-        if res.status_code != 200:
-            raise Exception()
-        return res.json()
-
     def checkLogin(self) -> bool:
         # https://apidocs.kennasecurity.com/reference#list-applications
         try:
-            res = self._buildRequest('/applications')
+            url = self.getEndpoint('/applications')
+            res = self.session.get(url)
         except Exception as err:
             res = None
         return True if res is not None else False
@@ -44,7 +43,7 @@ class Kenna():
         logging.info("Connecting to Kenna Endpoint :: " + url)
 
         with open(kenna_file, 'rb') as handle:
-            res = self.session.get(url, files={
+            res = self.session.post(url, files={
                 'file': handle
             })
         if res.status_code != 200:
