@@ -107,10 +107,8 @@ data = kenna_client.generateData(vulnerabilities)
 # Write to file
 with open('kenna-data.json', 'w') as handle:
     json.dump(data, handle, indent=2)
-# Upload file
-result = kenna_client.uploadFile('kenna-data.json')
 
-if result.get("success") != "true":
-    raise Exception("Upload Failed")
+# Upload file
+kenna_client.uploadFile('kenna-data.json')
 
 logging.info("Upload successful!")

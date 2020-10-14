@@ -1,4 +1,5 @@
 
+import pycurl
 import urllib
 import logging
 import datetime
@@ -42,18 +43,17 @@ class Kenna():
         )
         logging.info("Connecting to Kenna Endpoint :: " + url)
 
-        with open(kenna_file, 'rb') as handle:
-            res = self.session.post(url, files={
-                'file': handle
-            })
-        if res.status_code != 200:
-            logging.error("Request Status Code :: " + str(res.status_code))
-            # Show content if logging is set to debug
-            if logging.getLogger().isEnabledFor(logging.DEBUG):
-                logging.error(str(res.text))
-            raise Exception("File Upload Request Failed")
+        # with open(kenna_file, 'rb') as handle:
+        c = pycurl.Curl()
+        c.setopt(c.URL, url)
+        c.setopt(c.POST, 1)
+        c.setopt(c.HTTPPOST, [("file", (c.FORM_FILE, kenna_file))])
+        c.setopt(pycurl.HTTPHEADER, ['content-type:application/json'])
+        c.setopt(pycurl.HTTPHEADER, ['X-Risk-Token:'+self.token])
+        c.setopt(c.VERBOSE, 0)
+        c.perform()
+        c.close()
 
-        return res.json()
 
     def generateData(self, vulnerabilities):
         now = datetime.datetime.strftime(
